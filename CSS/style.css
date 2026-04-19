@@ -1,0 +1,547 @@
+/* ═══════════════════════════════════════════════
+   HAY Wine List — Styles
+   Aesthetic: Refined luxury editorial, dark cellar
+   Fonts: Gilroy-Black (logo) + Cinzel (display) + Cormorant Garamond (body)
+════════════════════════════════════════════════ */
+ 
+@font-face {
+  font-family: "Gilroy-Black";
+  src: url("./Logo/Gilroy-Black.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+ 
+:root {
+  --clr-bg: #f5efe5;
+  --clr-surface: #f3ede3;
+  --clr-card: #ede5db;
+  --clr-border: #d3c6b4;
+  --clr-border-light: #e2d7ca;
+  --clr-gold: #9c7f60;
+  --clr-gold-dim: #8b7158;
+  --clr-gold-pale: #e4d3b8;
+  --clr-cream: #faf4ee;
+  --clr-text: #111111;
+  --clr-text-dim: #4a4138;
+  --clr-text-muted: #6b6158;
+  --clr-rose: #b57570;
+  --clr-white-wine: #b69f79;
+  --clr-red-wine: #8b4f4f;
+  --clr-prestige: #a68355;
+ 
+  /* FIX: хардкодні кольори перенесено в токени */
+  --clr-header-bg: #4f4f4f;
+  --clr-header-text: #ffffff;
+  --clr-price: #6a5a40;
+  --clr-entry-border: rgba(46, 38, 25, 0.4);
+ 
+  --ff-display: "Cinzel", serif;
+  --ff-body: "Cormorant Garamond", serif;
+ 
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+  --space-2xl: 4rem;
+ 
+  --max-w: 960px;
+  --radius: 2px;
+}
+ 
+/* ── Reset ─────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ 
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+ 
+body {
+  background: var(--clr-bg);
+  color: var(--clr-text);
+  font-family: var(--ff-body);
+  font-size: 1rem;
+  line-height: 1.5;
+  min-height: 100vh;
+  background-image:
+    radial-gradient(
+      ellipse 60% 40% at 50% 0%,
+      rgba(156, 127, 96, 0.05) 0%,
+      transparent 70%
+    ),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+}
+ 
+/* ── Utility ────────────────────────────────── */
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+ 
+/* ── Header ─────────────────────────────────── */
+.site-header {
+  text-align: left;
+  padding: var(--space-2xl) var(--space-md) var(--space-xl) 50px;
+  border-bottom: 1px solid var(--clr-border);
+  position: relative;
+  background: var(--clr-header-bg); 
+}
+ 
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-lg);
+}
+ 
+.site-header::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--clr-gold), transparent);
+}
+ 
+.header-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-sm);
+}
+ 
+.header-ornament {
+  color: var(--clr-gold);
+  font-size: 1.4rem;
+  opacity: 0.7;
+  line-height: 1;
+}
+ 
+.site-title {
+  font-family: "Gilroy-Black", var(--ff-display);
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  color: var(--clr-header-text); /* FIX: було #ffffff */
+  text-transform: uppercase;
+  line-height: 1;
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+  background-clip: unset;
+  margin: 0;
+}
+ 
+.site-subtitle {
+  font-family: var(--ff-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.35em;
+  color: var(--clr-header-text); /* FIX: було #ffffff */
+  text-transform: uppercase;
+  margin: 0;
+  margin-top: var(--space-xs);
+}
+ 
+.sommelier-header {
+  font-family: var(--ff-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--clr-header-text); /* FIX: було #ffffff */
+  text-transform: uppercase;
+  margin: 0;
+  text-align: right;
+  white-space: nowrap;
+  padding-right: 50px;
+}
+ 
+/* ── Navigation ─────────────────────────────── */
+.section-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(245, 239, 229, 0.97);
+  border-bottom: 1px solid var(--clr-border);
+  backdrop-filter: blur(8px);
+}
+ 
+.section-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+ 
+.section-nav li a {
+  display: block;
+  padding: 0.75rem 1rem;
+  font-family: var(--ff-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--clr-text-dim);
+  text-decoration: none;
+  transition: color 0.25s;
+  white-space: nowrap;
+}
+ 
+.section-nav li a:hover,
+.section-nav li a.active {
+  color: var(--clr-gold);
+}
+ 
+/* ── Main Content ───────────────────────────── */
+.menu-body {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+ 
+/* ── Section ────────────────────────────────── */
+.menu-section {
+  padding: var(--space-2xl) 0;
+  border-bottom: 1px solid var(--clr-border);
+}
+ 
+.menu-section:last-child {
+  border-bottom: none;
+}
+ 
+.section-title {
+  font-family: var(--ff-display);
+  font-size: clamp(1.1rem, 3vw, 1.6rem);
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--clr-gold);
+  text-align: center;
+  margin-bottom: var(--space-xl);
+  position: relative;
+}
+ 
+.section-title::before,
+.section-title::after {
+  content: "";
+  display: inline-block;
+  width: 40px;
+  height: 1px;
+  background: var(--clr-gold-dim);
+  vertical-align: middle;
+  margin: 0 1rem;
+  opacity: 0.6;
+}
+ 
+/* ── Country Block ──────────────────────────── */
+.country-block {
+  margin-bottom: var(--space-xl);
+}
+ 
+.country-title {
+  font-family: var(--ff-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--clr-gold-dim);
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--clr-border);
+  margin-bottom: var(--space-lg);
+}
+ 
+/* ── Subsection ─────────────────────────────── */
+.subsection {
+  margin-bottom: var(--space-lg);
+}
+ 
+.sub-title {
+  font-family: var(--ff-display);
+  font-size: 0.95rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--clr-text-dim);
+  margin-bottom: var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+ 
+.sub-title .volume {
+  color: var(--clr-text-muted);
+  font-size: 0.95rem;
+}
+ 
+.appellation-title {
+  font-family: var(--ff-body);
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--clr-text-dim);
+  margin-bottom: var(--space-sm);
+  padding-left: var(--space-sm);
+  border-left: 1px solid var(--clr-border-light);
+  letter-spacing: 0.05em;
+}
+ 
+/* ── Wine Entry ─────────────────────────────── */
+/* FIX: об'єднано два окремих блоки .wine-entry в один */
+.wine-entry {
+  display: grid;
+  grid-template-columns: minmax(120px, 200px) 1fr auto;
+  gap: var(--space-md);
+  align-items: baseline;
+  padding: 0.55rem 0.75rem;
+  border-radius: var(--radius);
+  transition: background 0.2s;
+  border-bottom: 1px solid var(--clr-entry-border); /* FIX: було хардкодний rgba */
+  position: relative;
+ 
+  /* Scroll-reveal animation */
+  opacity: 0;
+  transform: translateY(6px);
+  animation: fadeUp 0.4s forwards;
+}
+ 
+.wine-entry:last-child {
+  border-bottom: none;
+}
+ 
+.wine-entry:hover {
+  background: rgba(201, 168, 76, 0.04);
+}
+ 
+.wine-entry.prestige {
+  background: rgba(184, 150, 46, 0.04);
+  border-left: 2px solid var(--clr-gold-dim);
+  padding-left: calc(0.75rem - 2px);
+}
+ 
+.wine-entry.prestige:hover {
+  background: rgba(201, 168, 76, 0.07);
+}
+ 
+/* FIX: reduced-motion — людям з вестибулярними порушеннями */
+@media (prefers-reduced-motion: reduce) {
+  .wine-entry {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+ 
+/* Coravin block accent */
+.coravin-block {
+  border-left: 1px solid var(--clr-border-light);
+  padding-left: var(--space-md);
+}
+ 
+/* FIX: .rose-block тепер реально додає border-left */
+.rose-block .wine-entry {
+  border-left: 2px solid var(--clr-rose);
+  padding-left: calc(0.75rem - 2px);
+}
+ 
+/* ── Wine Meta (vintage + region + badge) ──────────── */
+.wine-meta {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 0.75rem;
+  row-gap: 0.15rem;
+  align-items: baseline;
+  min-width: 0;
+}
+ 
+.vintage-region {
+  display: flex;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: baseline;
+  min-width: 0;
+}
+ 
+.vintage {
+  grid-column: 1;
+  grid-row: 1;
+}
+ 
+/* FIX: truncate-утиліта замість трьох повторних властивостей */
+.region {
+  grid-column: 2;
+  grid-row: 1;
+  font-size: 0.75rem;
+  color: var(--clr-text-muted);
+  font-style: italic;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+ 
+/* ── Badge ──────────────────────────────────── */
+.badge {
+  grid-column: 1;
+  grid-row: 2;
+}
+ 
+/* ── Wine Main (top-line + producer) ───────────── */
+.wine-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
+}
+ 
+.top-line {
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+  min-width: 0;
+}
+ 
+.name-producer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
+  flex: 1;
+}
+ 
+.wine-name {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--clr-text);
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+}
+ 
+.producer {
+  font-size: 0.95rem;
+  color: var(--clr-text-dim);
+  font-style: italic;
+}
+ 
+/* ── Wine Details (alc + cap + price) ──────── */
+.wine-details {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-sm);
+  white-space: nowrap;
+  justify-content: flex-end;
+}
+ 
+.alc {
+  font-size: 1rem;
+  color: var(--clr-text-muted);
+  letter-spacing: 0.05em;
+}
+ 
+.cap {
+  font-size: 1rem;
+  color: var(--clr-text-muted);
+  letter-spacing: 0.05em;
+}
+ 
+.price {
+  font-family: var(--ff-display);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--clr-price); /* FIX: було #6a5a40 */
+  min-width: 4.5rem;
+  text-align: right;
+  letter-spacing: 0.05em;
+}
+ 
+/* ── Footer ─────────────────────────────────── */
+.site-footer {
+  text-align:;
+  padding: var(--space-xl) var(--space-md);
+  border-top: 1px solid var(--clr-border);
+  margin-top: var(--space-xl);
+  background: var(--clr-header-bg);
+}
+ 
+.sommelier-footer {
+ font-family: var(--ff-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--clr-header-text); /* FIX: було #ffffff */
+  text-transform: uppercase;
+  margin: 0;
+  text-align: right;
+  white-space: nowrap;
+  padding-right: 50px;
+}
+ 
+/* ── Scroll-reveal animation ────────────────── */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+ 
+/* Stagger delays — якщо немає JS, базовий fallback */
+.menu-section .wine-entry:nth-child(1) { animation-delay: 0.02s; }
+.menu-section .wine-entry:nth-child(2) { animation-delay: 0.04s; }
+.menu-section .wine-entry:nth-child(3) { animation-delay: 0.06s; }
+.menu-section .wine-entry:nth-child(4) { animation-delay: 0.08s; }
+.menu-section .wine-entry:nth-child(5) { animation-delay: 0.10s; }
+.menu-section .wine-entry:nth-child(n + 6) { animation-delay: 0.12s; }
+ 
+/* ── Responsive ─────────────────────────────── */
+@media (max-width: 700px) {
+  .wine-entry {
+    grid-template-columns: 1fr;
+    gap: var(--space-xs);
+    padding: 0.65rem 0.5rem;
+  }
+ 
+  .wine-details {
+    justify-content: flex-start;
+  }
+ 
+  /* FIX: .region на мобільному переносить текст замість обрізки */
+  .region {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+  }
+ 
+  .section-title::before,
+  .section-title::after {
+    width: 20px;
+    margin: 0 0.5rem;
+  }
+}
+ 
+@media (max-width: 500px) {
+  .section-nav li a {
+    font-size: 0.7rem; /* FIX: було 0.5rem (~8px) — нижче мінімуму доступності */
+    padding: 0.6rem 0.5rem;
+    letter-spacing: 0.12em;
+  }
+ 
+  .site-title {
+    letter-spacing: 0.25em;
+  }
+}
+ 
+@media (min-width: 701px) and (max-width: 900px) {
+  .wine-entry {
+    grid-template-columns: 160px 1fr auto;
+  }
+}
+ 
+/* ── Utility: highlight prestige price ──────── */
+.wine-entry.prestige .price {
+  color: var(--clr-prestige);
+}

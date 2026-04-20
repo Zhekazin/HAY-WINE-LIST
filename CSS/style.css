@@ -284,7 +284,6 @@ body {
 .appellation-title {
   font-family: var(--ff-body);
   font-size: 1.0rem;
-  font-style: ;
   color: var(--clr-text-dim);
   margin-bottom: var(--space-sm);
   padding-left: var(--space-sm);
@@ -380,7 +379,6 @@ body {
   grid-row: 1;
   font-size: 0.9rem;
   color: var(--clr-text-muted);
-  font-style:;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -427,7 +425,7 @@ body {
 .producer {
   font-size: 0.95rem;
   color: var(--clr-text-dim);
-  font-style:;
+  letter-spacing: 0.05em;
 }
  
 /* ── Wine Details (alc + cap + price) ──────── */

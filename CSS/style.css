@@ -250,7 +250,7 @@ body {
  
 .country-title {
   font-family: var(--ff-display);
-  font-size: 0.7rem;
+  font-size: 1.25rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--clr-gold-dim);
@@ -283,8 +283,8 @@ body {
  
 .appellation-title {
   font-family: var(--ff-body);
-  font-size: 0.85rem;
-  font-style: italic;
+  font-size: 1.0rem;
+  font-style: ;
   color: var(--clr-text-dim);
   margin-bottom: var(--space-sm);
   padding-left: var(--space-sm);
@@ -356,7 +356,7 @@ body {
   grid-template-columns: max-content 1fr;
   grid-template-rows: auto auto;
   column-gap: 0.75rem;
-  row-gap: 0.15rem;
+  row-gap: 0.25rem;
   align-items: baseline;
   min-width: 0;
 }
@@ -378,9 +378,9 @@ body {
 .region {
   grid-column: 2;
   grid-row: 1;
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   color: var(--clr-text-muted);
-  font-style: italic;
+  font-style:;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -390,6 +390,7 @@ body {
 .badge {
   grid-column: 1;
   grid-row: 2;
+  font-size: 0.9rem;
 }
  
 /* ── Wine Main (top-line + producer) ───────────── */
@@ -426,14 +427,14 @@ body {
 .producer {
   font-size: 0.95rem;
   color: var(--clr-text-dim);
-  font-style: italic;
+  font-style:;
 }
  
 /* ── Wine Details (alc + cap + price) ──────── */
 .wine-details {
   display: flex;
   align-items: baseline;
-  gap: var(--space-sm);
+  gap: 1.5rem;
   white-space: nowrap;
   justify-content: flex-end;
 }

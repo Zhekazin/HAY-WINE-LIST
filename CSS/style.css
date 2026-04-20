@@ -452,7 +452,7 @@ body {
  
 .price {
   font-family: var(--ff-display);
-  font-size: 0.95rem;
+  font-size: 1.3rem;
   font-weight: 500;
   color: var(--clr-price); /* FIX: було #6a5a40 */
   min-width: 4.5rem;
@@ -462,7 +462,7 @@ body {
  
 /* ── Footer ─────────────────────────────────── */
 .site-footer {
-  text-align:;
+  /*text-align:;*/
   padding: var(--space-xl) var(--space-md);
   border-top: 1px solid var(--clr-border);
   margin-top: var(--space-xl);

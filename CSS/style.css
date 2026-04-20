@@ -5,8 +5,8 @@
 ════════════════════════════════════════════════ */
  
 @font-face {
-  font-family: "Gilroy-Black";
-  src: url("./Logo/Gilroy-Black.otf") format("opentype");
+  font-family: "Gilroy-Regular";
+  src: url("./Logo/Gilroy-Regular.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }

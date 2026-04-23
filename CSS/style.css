@@ -363,7 +363,7 @@ body {
 .vintage-region {
   display: flex;
   grid-template-columns: max-content minmax(0, 1fr);
-  gap: 1.25rem;
+  gap: 1.0rem;
   align-items: baseline;
   min-width: 0;
 }
@@ -388,7 +388,7 @@ body {
 .badge {
   grid-column: 1;
   grid-row: 2;
-  font-size: 0.9rem;
+  font-size: 0.6rem;
 }
  
 /* ── Wine Main (top-line + producer) ───────────── */

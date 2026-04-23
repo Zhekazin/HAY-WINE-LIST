@@ -461,25 +461,48 @@ body {
  
 /* ── Footer ─────────────────────────────────── */
 .site-footer {
-  /*text-align:;*/
-  padding: var(--space-xl) var(--space-md);
+  padding: var(--space-xl) var(--space-md) var(--space-xl) 50px;
   border-top: 1px solid var(--clr-border);
-  margin-top: var(--space-xl);
   background: var(--clr-header-bg);
+  position: relative;
 }
- 
+
+.site-footer::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--clr-gold), transparent);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-sm);
+}
+
 .sommelier-footer {
- font-family: var(--ff-display);
+  font-family: var(--ff-display);
   font-size: 0.75rem;
   letter-spacing: 0.2em;
-  color: var(--clr-header-text); /* FIX: було #ffffff */
+  color: var(--clr-header-text);
   text-transform: uppercase;
   margin: 0;
   text-align: right;
   white-space: nowrap;
   padding-right: 50px;
 }
- 
 /* ── Scroll-reveal animation ────────────────── */
 @keyframes fadeUp {
   to {

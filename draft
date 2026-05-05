@@ -69,4 +69,22 @@ SPARKLING- 0,75
             </div>
           </div>
         </div>
+
+                  <div class="subsection">
+            <h4 class="appellation-title">Lombardia</h4>
+            <div class="wine-entry">
+              <div class="wine-meta">
+                <span class="vintage">2020</span
+                ><span class="region">Valtellina</span>
+              </div>
+              <div class="wine-main">
+                <span class="wine-name">5 Stelle Sfursat</span
+                ><span class="producer">Nino Negri</span>
+              </div>
+              <div class="wine-details">
+                <span class="alc">16,0%</span><span class="cap">0,75</span
+                ><span class="price">5 000</span>
+              </div>
+            </div>
+          </div>
           

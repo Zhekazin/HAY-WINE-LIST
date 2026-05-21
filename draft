@@ -20,20 +20,7 @@
             </div>
           </div>
 
-            <div class="wine-entry prestige">
-              <div class="wine-meta">
-                <span class="vintage">2015</span>
-                <span class="region">Napa Valley</span>
-              </div>
-              <div class="wine-main">
-                <span class="wine-name">Opus One</span>
-                <span class="producer">Rothschild & Mondavi</span>
-              </div>
-              <div class="wine-details">
-                <span class="alc">15,0%</span><span class="cap">0,75</span>
-                <span class="price">65 000</span>
-              </div>
-            </div>
+
 
           <div class="wine-entry">
             <div class="wine-meta">
@@ -53,21 +40,5 @@
           </div>
         </div>
 
-                  <div class="subsection">
-            <h4 class="appellation-title">Lombardia</h4>
-            <div class="wine-entry">
-              <div class="wine-meta">
-                <span class="vintage">2020</span
-                ><span class="region">Valtellina</span>
-              </div>
-              <div class="wine-main">
-                <span class="wine-name">5 Stelle Sfursat</span
-                ><span class="producer">Nino Negri</span>
-              </div>
-              <div class="wine-details">
-                <span class="alc">16,0%</span><span class="cap">0,75</span
-                ><span class="price">5 000</span>
-              </div>
-            </div>
-          </div>
+
           
